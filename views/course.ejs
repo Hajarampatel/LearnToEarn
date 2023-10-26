@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn2Earn</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&family=Ubuntu:wght@500&display=swap"
+        rel="stylesheet" />
+        <style>
+            /* Import Font Dancing Script */
+    @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+    
+    * {
+        margin: 0;
+    }
+    
+    body {
+        background-color: #6ac9e3;
+        font-family: Arial;
+    
+    }
+    
+    /* NavbarTop */
+    .navbar-top {
+        background-color: #86a8ec;
+        color: #333;
+        box-shadow: 0px 4px 8px 0px grey;
+        height: 70px;
+    }
+    
+    .title {
+        font-family: 'Dancing Script', cursive;
+        padding-top: 15px;
+        position: absolute;
+        left: 45%;
+    }
+    
+    .navbar-top ul {
+        float: right;
+        list-style-type: none;
+        margin: 0;
+        overflow: hidden;
+        padding: 18px 50px 0 40px;
+    }
+    
+    .navbar-top ul li {
+        float: left;
+    }
+    
+    .navbar-top ul li a {
+        color: #333;
+        padding: 14px 16px;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .icon-count {
+        background-color: #ff0000;
+        color: #fff;
+        float: right;
+        font-size: 11px;
+        left: -25px;
+        padding: 2px;
+        position: relative;
+    }
+    
+    /* End */
+    
+    /* Sidenav */
+    .sidenav {
+        background-color: #708ecb;
+        color: #333;
+        border-bottom-right-radius: 25px;
+        height: 86%;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+        position: absolute;
+        top: 70px;
+        width: 250px;
+    }
+    
+    .profile {
+        margin-bottom: 20px;
+        margin-top: -12px;
+        text-align: center;
+    }
+    
+    .profile img {
+        border-radius: 50%;
+        box-shadow: 0px 0px 5px 1px grey;
+    }
+    
+    .name {
+        font-size: 20px;
+        font-weight: bold;
+        padding-top: 20px;
+    }
+    
+    .job {
+        font-size: 16px;
+        font-weight: bold;
+        padding-top: 10px;
+    }
+    
+    
+    
+    /* Main */
+    .cont{
+        position: relative;
+        left: 19rem;
+        width: 50%; 
+    }
+    .con{
+        width:100%;
+        position: relative;
+        top: .2rem;
+        left: 9rem;
+        border: 0.3rem rgb(238, 167, 34) solid;
+        border-radius: 1rem;
+        padding: 1rem;
+        margin-left: 4rem;
+        margin-top: 2rem;
+    }
+    .con .img{
+        justify-content: center;
+        max-width: 100%;
+        max-height: 30%;
+        width: 100%;
+        height: 15rem;
+    }
+    .con .img img{
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        padding:0 0 1rem 0;
+        border-bottom: 0.1rem gray solid;
+        object-fit: contain;
+    }
+    .con .desc{
+        text-align: justify;
+    }
+    .con .desc a{
+        width: 100%;
+        font-size: 1.2rem;
+        color: rgb(197, 51, 51);
+    }
+    .con .desc h2{
+        font-size: 1.5rem;
+        color: black;
+    }
+    .con .desc a:hover{
+        color: rgb(247, 34, 6);
+    }
+    .con .desc p{
+        font-size: 1.2rem;
+    }
+    .ma{
+        margin-left: 5rem;
+        margin-top: 2rem;
+        border: .3rem #f39c12 solid;
+        border-radius: 0 0 0 4rem;
+    }
+    
+    
+    /* End */
+        </style>
+</head>
+
+<body>
+    <!--Navigation Bar -->
+    <header >
+        <div id="menuj" class="fas fa-bars"></div>
+
+        <a href="#" class="logo"><i class="fas fa-laptop-code"></i>Learn2Earn</a>
+
+        <nav class="navbar1">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a class="active" href="/course">Course</a></li>
+              
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="login" class="fa-solid fa-circle-user"></div>
+    </header>
+    <div class="login-form"  > 
+        <form action="/login" method="post">
+           
+            <h3>login</h3>
+            <%  if(successl != ' '){%>
+                <div class="alert alert-success">
+                    <strong><h1><%= successl %></h1></strong>
+                </div>
+    
+             <% } %>
+            <input type="text" name="username" placeholder="username" class="box" required />
+            <input type="password" name="password" placeholder="password" class="box" required />
+            <p>
+                forget password? <a onclick="somefunction2()" href="#">click here</a>
+            </p>
+            <p>
+                do not have an account?
+                <a onclick="somefunction1()" href="#">Register Here</a>
+            </p>
+            <input type="submit" class="btnoo" value="login" />
+            <i class="fas fa-times"></i>
+        </form>
+    </div>
+    
+    <!-- Change Password -->
+<div class="change-password">
+    <form action="/fp" method="post">
+        <h3>Change Password</h3>
+        <%  if(successr != ' '){%>
+            <div class="alert alert-success">
+                <strong><h1><%= successr %></h1></strong>
+            </div>
+
+         <% } %>
+         <input type="text" placeholder="Username" name="username" class="box" required />
+         <input type="number" placeholder="Contact Number" name="contactnumber" length="10" class="box" required />
+         <input type="number" placeholder="Student Id" name="studentid" class="box" required />
+         <input type="password" placeholder="New Password" name="password" class="box" required />
+         <input type="password" placeholder="Confirm New Password" name="confirmpassword" class="box" required />
+        <input type="submit" class="btnoo" value="Change" />
+        <i class="fas fa-times"></i>
+    </form>
+</div>
+    <!-- Registration Form -->
+    <div class="registration-form">
+        <form onsubmit="validate()" action="/register" method="post">
+            <h3>Register</h3>
+            <%  if(successr != ' '){%>
+                <div class="alert alert-success">
+                    <strong><h1><%= successr %></h1></strong>
+                </div>
+    
+             <% } %>
+            <input type="text" placeholder="Name" name="name" class="box" required />
+            <input type="number" placeholder="Contact Number" name="contactnumber" class="box" required  length="10"  />
+            <input type="text" placeholder="Username" name="username" class="box" required />
+            <input type="password" placeholder="Password" name="password" class="box" required />
+            <input type="password" placeholder="Confirm Password" name="confirmpassword" class="box" required  />
+            <input type="submit" class="btnoo" value="Submit" />
+            <i class="fas fa-times"></i>
+        </form>
+    </div>
+
+    <div style="position: relative;left: 18rem;width: 82% ;height: 20px; top : 20px;" class="row pd">
+       
+        <% for (var i=0; i <result.length; i++ ) { %>
+            <br />
+            <div class="card ma" style="width: 30rem; height: 33rem;">
+                <% var str="uploads/" +result[i].course_image;%>
+                    <img style="width: 100%; height: 13rem;" class="card-img-top" src="<%=str%>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 style="font-size: 2.3rem;" class="card-title"><b>
+                                <%=result[i].course_name%>(<%=result[i].course_id%>)
+                            </b></h5>
+                        <p style="font-size: 2rem; text-align: justify;" class="card-text">
+                            <%=result[i].course_desc%>
+                        </p>
+                    </div>
+            </div>
+            <% } %>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- JS -->
+<script src="js/home.js"></script>
+</body>
+</html>

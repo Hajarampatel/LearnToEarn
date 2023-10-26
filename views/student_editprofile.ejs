@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+    <style>
+        /* Import Font Dancing Script */
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #6ac9e3;
+    font-family: Arial;
+    overflow: hidden;
+}
+
+/* NavbarTop */
+.navbar-top {
+    background-color: #86a8ec;
+    color: #333;
+    box-shadow: 0px 4px 8px 0px grey;
+    height: 70px;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    padding-top: 15px;
+    position: absolute;
+    left: 45%;
+}
+
+.navbar-top ul {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 18px 50px 0 40px;
+}
+
+.navbar-top ul li {
+    float: left;
+}
+
+.navbar-top ul li a {
+    color: #333;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.icon-count {
+    background-color: #ff0000;
+    color: #fff;
+    float: right;
+    font-size: 11px;
+    left: -25px;
+    padding: 2px;
+    position: relative;
+}
+
+/* End */
+
+/* Sidenav */
+.sidenav {
+    background-color: #708ecb;
+    color: #333;
+    border-bottom-right-radius: 25px;
+    height: 86%;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    position: absolute;
+    top: 70px;
+    width: 250px;
+}
+
+.profile {
+    margin-bottom: 20px;
+    margin-top: -12px;
+    text-align: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 1px grey;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.job {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+
+
+/* Main */
+.add{
+    text-align: center;
+    width: 45%;
+    height: 40%;
+    position: relative;
+    top: 5rem;
+    left: 34rem;
+    border: .2rem rgb(7, 151, 139) solid;
+    border-radius: .5rem;
+}
+.add h1{
+    border-bottom: .2rem rgb(7, 151, 139) solid;
+    border-radius: .1rem;
+}
+.add form{
+    padding: 1rem;
+}
+.add form span{
+    font-size: 1.5rem;
+    margin-bottom: .10rem;
+}
+.add form .in{
+    width: 70%;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border: .1rem rgb(7, 151, 139) solid;
+    border-radius: .5rem;
+    background: rgb(255, 255, 255);
+    padding: .3rem;
+}
+.add form .de{
+    width: 70%;
+    height: 5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border: .1rem rgb(7, 151, 139) solid;
+    border-radius: .5rem;
+    background: rgb(255, 255, 255);
+}
+.add form .ch{
+    width: 38%;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border: .1rem rgb(7, 151, 139) solid;
+    border-radius: .5rem;
+    background: rgb(255, 255, 255);
+}
+.add form .ch:hover{
+   cursor: pointer;
+}
+.add form .btn{
+    width: 50%;
+    height: 2.2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: .5rem;
+    background: rgb(7, 151, 139);
+    color: rgb(6, 3, 14);
+}
+.add form .btn:hover{
+    background: rgb(250, 207, 66);
+    cursor: pointer;
+}
+
+/* End */
+    </style>
+</head>
+<body>
+    <!-- Navbar top -->
+    <div class="navbar-top">
+        <div class="title">
+            <h1>Edit Profile</h1>
+        </div>
+
+        <!-- Navbar -->
+        <ul>
+            <li>
+                <a href="/back">
+                    <i class="fa fa-sign-out-alt fa-2x"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- End -->
+    </div>
+    <!-- End -->
+
+    <!-- Sidenav -->
+    <div class="sidenav">
+        <div style="margin-top: 5rem;" class="profile">
+            <a src=""><i class="fas fa-laptop-code" style="font-size: 3rem;"></i><h1>Learn2Earn</h1></a>
+            <div style="font-size: 2rem;" class="name">
+                <%=result[0].stu_name.toUpperCase()%>
+            </div>
+            <div class="job">
+                <%=result[0].stu_id%>
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+
+    <!-- Main -->
+    <div class="add">
+        <h1>Update Your Profile</h1>
+        <form action="/updateprofile" method="post" enctype="multipart/form-data">
+             <span>Student ID -</span>
+             <input type="text" name="studentid" style="background: lightgrey;" placeholder="Course Id" class="in" id="" value="<%=result[0].stu_id%>" required readonly><br>
+             <span>Username -</span>
+             <input type="text" name="username" style="background: lightgray;" placeholder="Course Name" class="in" id="" value="<%=result[0].user_name%>" required readonly><br>
+             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name -</span>
+             <input type="text" name="name" placeholder="Course Name" class="in" id="" value="<%=result[0].stu_name.toUpperCase()%>" required><br>
+             <span>Contact No-</span>
+             <input type="text" name="contact" placeholder="Course Fee" class="in" id="" value="<%=result[0].contact_no%>" required><br>
+             <span>&nbsp;Password -</span>
+             <input type="password" name="password" placeholder="Course Fee" class="in" id="" value="<%=result[0].user_password%>" required><br>
+            
+            
+             <button type="submit" class="btn">Update</button>
+        </form>
+     </div>
+    <!-- End -->
+</body>
+</html>
